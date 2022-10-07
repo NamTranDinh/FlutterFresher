@@ -38,6 +38,6 @@ class _MyLifeCycleWidget extends State<LifeCycleAWidget> with WidgetsBindingObse
   @override
   Widget build(BuildContext context) {
     print('build()');
-    return const MaterialApp(title: '', home: Scaffold(),);
+    return const MaterialApp(title: 'aa', home: Scaffold(),);
   }
 }
