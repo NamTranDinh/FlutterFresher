@@ -31,7 +31,7 @@ class _MyAppState extends State<TextFieldUtils> {
                 margin:
                     const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                 child: TextField(
-                    controller: userEditing,
+                    // controller: userEditing,
                     onChanged: (text) {
                       setState(() {
                         _userName = text;
