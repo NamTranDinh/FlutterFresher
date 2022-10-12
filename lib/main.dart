@@ -6,6 +6,9 @@ import 'TextField.dart';
 void main() {
   runApp(
       MaterialApp(
+        theme: ThemeData(
+          primaryColor: Colors.green,
+        ),
         title: 'This is demo Flutter',
         home: RegisterForm(),
       )

@@ -20,13 +20,15 @@ class _RegisterFormState extends State<RegisterForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).primaryColor,
         onPressed: () {
           onShowModalBottomSheet();
         },
         child: const Icon(Icons.add),
       ),
       appBar: AppBar(
-        title: const Text('This is demo flutter'),
+        backgroundColor: Theme.of(context).primaryColor,
+        title: const Text('This is demo flutter', style: TextStyle(fontFamily: 'Pacifico_Regular'),),
         actions: [
           IconButton(
               onPressed: () {
@@ -76,6 +78,7 @@ class _RegisterFormState extends State<RegisterForm> {
                       margin: const EdgeInsets.symmetric(horizontal: 10),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                            backgroundColor: Theme.of(context).primaryColor,
                             fixedSize: const Size.fromWidth(120)),
                         onPressed: () {
                           setState(() {
@@ -91,7 +94,9 @@ class _RegisterFormState extends State<RegisterForm> {
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.red,
                             fixedSize: const Size.fromWidth(120)),
-                        onPressed: () {resetInput();},
+                        onPressed: () {
+                          resetInput();
+                        },
                         child: const Text('Cancel'),
                       ),
                     ),
@@ -115,7 +120,7 @@ class _RegisterFormState extends State<RegisterForm> {
     resetInput();
   }
 
-  void resetInput(){
+  void resetInput() {
     _model = UserModel(username: '', address: '');
     _UserNameController.text = '';
     _AddressController.text = '';
@@ -181,6 +186,7 @@ class _RegisterFormState extends State<RegisterForm> {
                           margin: const EdgeInsets.symmetric(horizontal: 10),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
+                                backgroundColor: Theme.of(context).primaryColor,
                                 fixedSize: const Size.fromWidth(120)),
                             onPressed: () {
                               setState(() {
@@ -213,10 +219,6 @@ class _RegisterFormState extends State<RegisterForm> {
           );
         });
   }
-}
-
-void hideKeyBoard(){
-  
 }
 
 String getListUsers(List<UserModel> list) {

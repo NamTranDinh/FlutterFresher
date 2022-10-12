@@ -15,7 +15,7 @@ class ListUserWidget extends StatelessWidget {
           return Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            color: (index % 2 == 0) ? Colors.blue : Colors.green,
+            color: (index % 2 == 0) ? Colors.green[300] : Theme.of(context).primaryColor,
             elevation: 10,
             child: ListTile(
               leading: const Icon(Icons.ac_unit, color: Colors.white),
