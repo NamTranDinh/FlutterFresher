@@ -9,14 +9,13 @@ class ListUserWidget extends StatelessWidget {
   const ListUserWidget({super.key, required this.lisUser});
 
   ListView _listWidgetUser() {
-    var index = 0;
     return ListView.builder(
         itemCount: lisUser.length,
         itemBuilder: (context, index) {
           return Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            color: (index % 2 == 0) ? Colors.pinkAccent : Colors.green,
+            color: (index % 2 == 0) ? Colors.blue : Colors.green,
             elevation: 10,
             child: ListTile(
               leading: const Icon(Icons.ac_unit, color: Colors.white),
