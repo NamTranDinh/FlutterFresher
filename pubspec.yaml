@@ -103,6 +103,12 @@ flutter:
         - asset: assets/fonts/Pacifico-Regular.ttf
           weight: 700
 
+    - family: Montserrat_VariableFont_wght
+      fonts:
+        - asset: assets/fonts/Montserrat-VariableFont_wght.ttf
+          weight: 700
+
+
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
