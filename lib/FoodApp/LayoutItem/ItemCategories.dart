@@ -1,21 +1,25 @@
+import 'package:demo_app/FoodApp/Home/HomeFood.dart';
 import 'package:demo_app/FoodApp/Models/CategoriesModel.dart';
 import 'package:flutter/material.dart';
 
 class ItemCategories extends StatelessWidget {
+  final BuildContext context;
   final CategoriesModel categoriesModel;
 
-  ItemCategories({required this.categoriesModel});
+  ItemCategories({required this.categoriesModel, required this.context});
 
   @override
   Widget build(BuildContext context) {
     Color colorBg = categoriesModel.color;
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        pushToRoute(HomeFood(categoriesModel: categoriesModel,));
+      },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 6.0),
         decoration: BoxDecoration(
           image: DecorationImage(
-              opacity: 0.5,
+              opacity: 0.8,
               image: AssetImage(categoriesModel.img),
               fit: BoxFit.cover),
           borderRadius: BorderRadius.circular(20),
@@ -42,9 +46,9 @@ class ItemCategories extends StatelessWidget {
               style: const TextStyle(
                 shadows: <Shadow>[
                   Shadow(
-                    offset: Offset(1.0, 1.0),
-                    blurRadius: 2.0,
-                    color: Colors.white12,
+                    offset: Offset(2.0, 2.0),
+                    blurRadius: 6.0,
+                    color: Colors.black,
                   )
                 ],
                 color: Colors.white,
@@ -57,5 +61,10 @@ class ItemCategories extends StatelessWidget {
         ),
       ),
     );
+  }
+  void pushToRoute(Widget widget){
+    Navigator.push(context, MaterialPageRoute(builder: (context){
+      return widget;
+    }));
   }
 }

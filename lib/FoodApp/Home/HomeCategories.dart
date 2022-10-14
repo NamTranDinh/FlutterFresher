@@ -14,7 +14,7 @@ class HomeCategories extends StatelessWidget {
             crossAxisSpacing: 6,
             mainAxisSpacing: 3),
         children:
-          FAKE_DATA_CATEGORIES.map((eachCategory) => ItemCategories(categoriesModel: eachCategory)).toList(),
+          FAKE_DATA_CATEGORIES.map((eachCategory) => ItemCategories(categoriesModel: eachCategory, context: context)).toList(),
       ),
     );
   }

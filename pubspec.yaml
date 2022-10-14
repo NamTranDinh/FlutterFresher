@@ -79,6 +79,8 @@ flutter:
     - assets/images/fruits.jpg
     - assets/images/hamburger.jpg
     - assets/images/snack.jpg
+    # loading path
+    - assets/loading_styles/loading_holder.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
