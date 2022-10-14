@@ -119,7 +119,6 @@ class AddFoodToListFavourite extends StatefulWidget {
 class _AddFoodToListFavouriteState extends State<AddFoodToListFavourite> {
   @override
   Widget build(BuildContext context) {
-
     return IconButton(
         onPressed: () {
           setState(() {
@@ -141,7 +140,6 @@ class _AddFoodToListFavouriteState extends State<AddFoodToListFavourite> {
         ));
   }
 
-  void isClickAdd() {}
 
   bool isFoodFavourite(FoodsModel foodsModel) {
     for (FavouritesFoodModel id in FAKE_FAVOURITE_FOODS) {
