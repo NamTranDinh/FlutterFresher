@@ -30,12 +30,7 @@ class HomeFood extends StatelessWidget {
     );
   }
 
-  List<FoodsModel> getListFoodByCategory() {
-    return FAKE_LIST_FOOD
-        .where((food) => (food.idCategory == categoriesModel.id))
-        .toList();
-  }
-
+  // App bar
   SliverAppBar _appBarHomeFood(BuildContext context) {
     return SliverAppBar(
       // title: Text(
@@ -51,8 +46,6 @@ class HomeFood extends StatelessWidget {
       pinned: true,
       flexibleSpace: Stack(
         children: [
-
-
           Positioned.fill(
             child: Image.asset(categoriesModel.img, fit: BoxFit.cover),
           ),
@@ -79,10 +72,12 @@ class HomeFood extends StatelessWidget {
     );
   }
 
+  // bng appbar
   Image _backGroundAppBar() {
     return Image(image: AssetImage(categoriesModel.img), fit: BoxFit.cover);
   }
 
+  // list item food
   SliverToBoxAdapter _listFoodByCategory(List<FoodsModel> listFoodsByCategory) {
     return SliverToBoxAdapter(
       child: Container(
@@ -96,4 +91,12 @@ class HomeFood extends StatelessWidget {
       ),
     );
   }
+
+  // Data list Food
+  List<FoodsModel> getListFoodByCategory() {
+    return FAKE_LIST_FOOD
+        .where((food) => (food.idCategory == categoriesModel.id))
+        .toList();
+  }
+
 }
