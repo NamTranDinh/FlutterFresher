@@ -18,7 +18,7 @@ class HomeFood extends StatelessWidget {
       child: Scaffold(
         backgroundColor: categoriesModel.color.withOpacity(0.3),
         body: CustomScrollView(
-          physics: const BouncingScrollPhysics(
+          physics:  const BouncingScrollPhysics(
             parent: AlwaysScrollableScrollPhysics(),
           ),
           slivers: [
@@ -36,24 +36,16 @@ class HomeFood extends StatelessWidget {
   // App bar
   SliverAppBar _appBarHomeFood(BuildContext context) {
     return SliverAppBar(
-      // title: Text(
-      //   categoriesModel.nameCategory,
-      //   style: const TextStyle(fontFamily: 'Pacifico_Regular'),
-      // ),
+      pinned: true,
+      elevation: 20,
       centerTitle: true,
       expandedHeight: 250,
-      collapsedHeight: 60,
-      elevation: 20,
       stretch: true,
-      floating: true,
-      pinned: true,
       flexibleSpace: Stack(
         children: [
-
           Positioned.fill(
             child: Image.asset(categoriesModel.img, fit: BoxFit.cover),
           ),
-
           FlexibleSpaceBar(
               title: Text(
                 categoriesModel.nameCategory,
@@ -71,7 +63,6 @@ class HomeFood extends StatelessWidget {
               ),
               centerTitle: true,
               background: _backGroundAppBar()),
-
         ],
       ),
     );
@@ -87,12 +78,19 @@ class HomeFood extends StatelessWidget {
     return SliverToBoxAdapter(
       child: Container(
         padding: const EdgeInsets.only(left: 10, right: 10, bottom: 20),
-        child: ListView(
-            primary: false,
-            shrinkWrap: true,
-            children: listFoodsByCategory
-                .map((eachFood) => ItemFoods(foodsModel: eachFood))
-                .toList()),
+        child: Stack(
+          children: [
+            Center(child: Visibility( visible: (listFoodsByCategory.isEmpty)? true : false,child: const Image(image: AssetImage('assets/images/img_placeholder_nothing.png')),)),
+
+            ListView(
+              primary: true,
+              shrinkWrap: true,
+              children: listFoodsByCategory
+                  .map((eachFood) => ItemFoods(foodsModel: eachFood))
+                  .toList(),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -103,5 +101,4 @@ class HomeFood extends StatelessWidget {
         .where((food) => (food.idCategory == categoriesModel.id))
         .toList();
   }
-
 }

@@ -82,6 +82,7 @@ flutter:
     - assets/images/fruits.jpg
     - assets/images/hamburger.jpg
     - assets/images/snack.jpg
+    - assets/images/img_placeholder_nothing.png
     # loading path
     - assets/loading_styles/loading_holder.gif
 

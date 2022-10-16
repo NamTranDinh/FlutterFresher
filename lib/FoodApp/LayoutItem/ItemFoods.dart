@@ -11,10 +11,10 @@ class ItemFoods extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return InkWell(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Scaffold(body: DetailFood(foodsModel: foodsModel,)),));
+        Navigator.push(context, MaterialPageRoute(builder: (context) =>
+            Scaffold(body: DetailFood(foodsModel: foodsModel,)),));
       },
       child: Card(
         color: Colors.white,
@@ -59,7 +59,7 @@ class ItemFoods extends StatelessWidget {
                       // formula
                       Container(
                         margin:
-                            const EdgeInsets.only(left: 15, bottom: 4, right: 10),
+                        const EdgeInsets.only(left: 15, bottom: 4, right: 10),
                         child: Text(
                           '- ${foodsModel.formula}',
                           maxLines: 2,
@@ -79,7 +79,7 @@ class ItemFoods extends StatelessWidget {
                         decoration: BoxDecoration(
                             color: Colors.black45.withOpacity(0.3),
                             borderRadius:
-                                const BorderRadius.all(Radius.circular(6.0)),
+                            const BorderRadius.all(Radius.circular(6.0)),
                             border: Border.all(color: Colors.white, width: 1)),
                         child: Center(
                           child: Row(
@@ -151,7 +151,7 @@ class _AddFoodToListFavouriteState extends State<AddFoodToListFavourite> {
 
   bool isFoodFavourite(FoodsModel foodsModel) {
     for (FavouritesFoodModel id in FAKE_FAVOURITE_FOODS) {
-      if (foodsModel.idFood == id.idFood) {
+      if (foodsModel.idFood == id.foodsModel.idFood) {
         return true;
       }
     }
@@ -162,14 +162,14 @@ class _AddFoodToListFavouriteState extends State<AddFoodToListFavourite> {
     int id = FAKE_FAVOURITE_FOODS.length;
     FavouritesFoodModel favouritesFoodModel = FavouritesFoodModel(
         id: id + 1,
-        idCategory: foodsModel.idCategory,
-        idFood: foodsModel.idFood);
+        foodsModel: foodsModel
+    );
     FAKE_FAVOURITE_FOODS.add(favouritesFoodModel);
   }
 
   void removeFoodOutListFavourite(FoodsModel foodsModel) {
     for (FavouritesFoodModel modelRemove in FAKE_FAVOURITE_FOODS) {
-      if (foodsModel.idFood == modelRemove.idFood) {
+      if (foodsModel.idFood == modelRemove.foodsModel.idFood) {
         FAKE_FAVOURITE_FOODS.remove(modelRemove);
         return;
       }

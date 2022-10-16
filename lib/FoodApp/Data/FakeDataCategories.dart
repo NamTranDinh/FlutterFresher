@@ -103,7 +103,5 @@ List<FoodsModel> FAKE_LIST_FOOD = [
 ];
 
 List<FavouritesFoodModel> FAKE_FAVOURITE_FOODS = [
-  FavouritesFoodModel(id: 1, idCategory: 1, idFood: 1),
-  FavouritesFoodModel(id: 2, idCategory: 1, idFood: 2),
-  FavouritesFoodModel(id: 3, idCategory: 2, idFood: 3)
+  // FavouritesFoodModel(id: 1, foodsModel: FoodsModel(idFood: 1, idCategory: 1, nameFood: 'Squid', imgFood: urlImg, ingredientList: ingredientList, durationTodo: const Duration(hours: 1, minutes: 20), complexity: Complexity.Medium, formula: formula, describe: desc)),
 ];

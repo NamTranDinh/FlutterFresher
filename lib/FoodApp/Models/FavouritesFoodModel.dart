@@ -1,7 +1,8 @@
+import 'FoodsModel.dart';
+
 class FavouritesFoodModel{
   late int id;
-  late int idCategory;
-  late int idFood;
+  late FoodsModel foodsModel;
 
-  FavouritesFoodModel({required this.id, required this.idCategory, required this.idFood});
+  FavouritesFoodModel({required this.id, required this.foodsModel});
 }

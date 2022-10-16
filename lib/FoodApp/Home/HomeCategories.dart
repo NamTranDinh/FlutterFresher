@@ -8,6 +8,9 @@ class HomeCategories extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(0),
       child: GridView(
+        physics: const BouncingScrollPhysics(
+          parent: AlwaysScrollableScrollPhysics(),
+        ),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 300,
             childAspectRatio: 3 / 2,
