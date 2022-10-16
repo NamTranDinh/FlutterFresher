@@ -39,9 +39,9 @@ List<CategoriesModel> FAKE_DATA_CATEGORIES = [
 ];
 
 String urlImg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcHcOgd-pTQugHulLfrrh_cwWo9gaU1s0XB6_HpqeSeel-XPeI9fxzBDFCMFKokYUm-Q4&usqp=CAU';
-List<String> ingredientList = ['ingredient 1','ingredient 2','ingredient 3','ingredient 4','ingredient 5','ingredient 6','ingredient 7','ingredient 8', 'ingredient 9', 'ingredient 10'];
-String formula = 'Step 1 : todo 1, Step 2 : todo 2, Step 3 : todo 3, Step 4 : todo 4, Step 5 : todo 5 ';
-String desc = 'food, substance consisting essentially of protein, carbohydrate, fat, and other nutrients used in the body of an organism to sustain growth and vital processes and to furnish energy. The absorption and utilization of food by the body is fundamental to nutrition and is facilitated by digestion. ';
+List<String> ingredientList = ['ingredient 1','ingredient 2','ingredient 3','ingredient 4','ingredient 5'];
+List<String> formula = ['Step 1 : todo 1', 'Step 2 : todo 2', 'Step 3 : todo 3', 'Step 4 : todo 4', 'Step 5 : todo 5'];
+String desc = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.';
 
 List<FoodsModel> FAKE_LIST_FOOD = [
   FoodsModel(idFood: 1, idCategory: 1, nameFood: 'Squid', imgFood: urlImg, ingredientList: ingredientList, durationTodo: const Duration(hours: 1, minutes: 20), complexity: Complexity.Medium, formula: formula, describe: desc),

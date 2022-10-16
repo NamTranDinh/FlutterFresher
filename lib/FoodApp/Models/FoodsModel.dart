@@ -6,7 +6,7 @@ class FoodsModel {
   late List<String> ingredientList;
   late Duration durationTodo;
   late Complexity complexity;
-  late String formula;
+  late List<String> formula;
   late String describe;
 
   FoodsModel(

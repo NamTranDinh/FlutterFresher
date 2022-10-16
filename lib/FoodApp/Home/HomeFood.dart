@@ -18,6 +18,9 @@ class HomeFood extends StatelessWidget {
       child: Scaffold(
         backgroundColor: categoriesModel.color.withOpacity(0.3),
         body: CustomScrollView(
+          physics: const BouncingScrollPhysics(
+            parent: AlwaysScrollableScrollPhysics(),
+          ),
           slivers: [
             // app bar
             _appBarHomeFood(context),
@@ -46,6 +49,7 @@ class HomeFood extends StatelessWidget {
       pinned: true,
       flexibleSpace: Stack(
         children: [
+
           Positioned.fill(
             child: Image.asset(categoriesModel.img, fit: BoxFit.cover),
           ),
@@ -58,15 +62,16 @@ class HomeFood extends StatelessWidget {
                   fontSize: 24,
                   shadows: <Shadow>[
                     Shadow(
-                      offset: Offset(6.0, 6.0),
-                      blurRadius: 20.0,
-                      color: Colors.black,
+                      offset: Offset(0.0, 0.0),
+                      blurRadius: 30.0,
+                      color: Colors.white12,
                     )
                   ],
                 ),
               ),
               centerTitle: true,
               background: _backGroundAppBar()),
+
         ],
       ),
     );
