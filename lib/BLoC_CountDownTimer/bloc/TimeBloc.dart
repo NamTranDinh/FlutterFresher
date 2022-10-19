@@ -33,12 +33,6 @@ class TimeBloc extends Bloc<TimeEvent, TimeStates> {
         .listen((duration) => add(TimeRunning(duration: duration)));
   }
 
-  @override
-  Future<void> close() {
-    _tickSubscription?.cancel();
-    return super.close();
-  }
-
   void _onPaused(TimePaused event, Emitter<TimeStates> emit) {
     if (state is TimeRunInProgress) {
       _tickSubscription?.pause();
@@ -64,5 +58,11 @@ class TimeBloc extends Bloc<TimeEvent, TimeStates> {
           ? TimeRunInProgress(duration: event.duration)
           : const TimeRunComplete(),
     );
+  }
+
+  @override
+  Future<void> close() {
+    _tickSubscription?.cancel();
+    return super.close();
   }
 }

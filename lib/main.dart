@@ -1,10 +1,10 @@
-import 'package:demo_app/BLoC_CountDownTimer/bloc/TimeBlocObserver.dart';
+import 'package:demo_app/CallApi/blocs/BLocObserver/bloc_observer_events.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'BLoC_CountDownTimer/page/TimePage.dart';
+import 'CallApi/main/api_main.dart';
 
-void main() {
-  Bloc.observer = TimeBlocObserver();
+void main(){
+  Bloc.observer = BlocObserverEvents();
 
   runApp(
     const MaterialApp(
@@ -12,7 +12,8 @@ void main() {
       //   primaryColor: Colors.green,
       // ),
       // title: 'This is demo Flutter',
-      home: TimePage(),
+      home: ApiMain(),
     ),
   );
 }
+
