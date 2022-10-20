@@ -6,9 +6,7 @@ abstract class TimeEvent extends Equatable {
   @override
   // TODO: implement props
   List<Object?> get props => [];
-
 }
-
 
 class TimeStarted extends TimeEvent {
   final int duration;
@@ -28,7 +26,7 @@ class TimeReset extends TimeEvent {
   const TimeReset();
 }
 
-class TimeRunning extends TimeEvent{
+class TimeRunning extends TimeEvent {
   final int duration;
 
   const TimeRunning({required this.duration});

@@ -1,18 +1,19 @@
 class AccountModel {
-  String? userName;
-  String? password;
-  String? fullName;
-  String? avatar;
-  String? type;
-  String? status;
+  late final String userName;
+  late final String password;
+  late final String fullName;
+  late final String avatar;
+  late final String type;
+  late final String status;
 
-  AccountModel(
-      {this.userName,
-        this.password,
-        this.fullName,
-        this.avatar,
-        this.type,
-        this.status});
+  AccountModel({
+    required this.userName,
+    required this.password,
+    required this.fullName,
+    required this.avatar,
+    required this.type,
+    required this.status,
+  });
 
   AccountModel.fromJson(Map<String, dynamic> json) {
     userName = json['user_name'];
@@ -24,13 +25,13 @@ class AccountModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['user_name'] = this.userName;
-    data['password'] = this.password;
-    data['full_name'] = this.fullName;
-    data['avatar'] = this.avatar;
-    data['type'] = this.type;
-    data['status'] = this.status;
-    return data;
+    final _data = <String, dynamic>{};
+    _data['user_name'] = userName;
+    _data['password'] = password;
+    _data['full_name'] = fullName;
+    _data['avatar'] = avatar;
+    _data['type'] = type;
+    _data['status'] = status;
+    return _data;
   }
 }

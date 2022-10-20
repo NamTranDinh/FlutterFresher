@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:demo_app/BLoC_CountDownTimer/Ticker.dart';
 import 'package:demo_app/BLoC_CountDownTimer/events/TimeEvent.dart';
 import 'package:demo_app/BLoC_CountDownTimer/states/TimeStates.dart';

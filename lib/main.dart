@@ -4,15 +4,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'CallApi/main/api_main.dart';
 
 void main(){
+
   Bloc.observer = BlocObserverEvents();
 
   runApp(
-    const MaterialApp(
+     const MaterialApp(
       // theme: ThemeData(
       //   primaryColor: Colors.green,
       // ),
       // title: 'This is demo Flutter',
-      home: ApiMain(),
+      home: ApiMain()
     ),
   );
 }
