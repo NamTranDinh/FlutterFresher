@@ -1,7 +1,7 @@
-import 'package:demo_app/CallApi/events/item_events.dart';
-import 'package:demo_app/CallApi/states/item_states.dart';
+import 'package:demo_app/CallApi/blocs/states/item_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../services/request_api.dart';
+import 'events/item_events.dart';
 
 /// emit : emit event to BlocBuilder which will catch event to handle widget
 

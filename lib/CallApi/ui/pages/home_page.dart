@@ -1,8 +1,9 @@
 import 'package:demo_app/CallApi/blocs/bloc_item.dart';
-import 'package:demo_app/CallApi/events/item_events.dart';
-import 'package:demo_app/CallApi/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../blocs/events/item_events.dart';
+import '../views/home_view.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
