@@ -57,6 +57,10 @@ dependencies:
   # http
   http: ^0.13.5
 
+  # svg_path_parser:
+
+
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -80,7 +84,7 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/icon/icon.png"
+  image_path: "assets/icon/ic_logo.png"
   min_sdk_android: 21
 
 # The following section is specific to Flutter packages.
@@ -111,6 +115,16 @@ flutter:
     - assets/images/img_placeholder_nothing.png
     # loading path
     - assets/loading_styles/loading_holder.gif
+    # logo
+    - assets/icon/icon.png
+    # login
+    - assets/login/festivities.png
+    - assets/login/img_facebook.png
+    - assets/login/img_instagram.png
+    - assets/login/img_google.png
+#    - assets/login/img_facebook.svg
+#    - assets/login/img_instagram.svg
+#    - assets/login/img_google.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -152,6 +166,16 @@ flutter:
     - family: Montserrat_Italic_VariableFont_wght
       fonts:
         - asset: assets/fonts/Montserrat-Italic-VariableFont_wght.ttf
+          weight: 700
+
+    - family: BalooDa2
+      fonts:
+        - asset: assets/fonts/BalooDa2-VariableFont_wght.ttf
+          weight: 700
+
+    - family: Kalam-Light
+      fonts:
+        - asset: assets/fonts/Kalam-Light.ttf
           weight: 700
 
 

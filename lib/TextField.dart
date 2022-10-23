@@ -23,6 +23,7 @@ class _MyAppState extends State<TextFieldUtils> {
     return MaterialApp(
       title: 'This is title app',
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -47,11 +48,12 @@ class _MyAppState extends State<TextFieldUtils> {
                 margin:
                     const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                 child: const TextField(
+                    obscureText: true,
                     decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(16))),
-                  labelText: 'Password',
-                )),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(16))),
+                      labelText: 'Password',
+                    )),
               ),
               const Text(
                 'RESULT BELOW',
