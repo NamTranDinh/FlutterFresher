@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:demo_app/FireBase/components/pages/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -33,12 +34,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             _logoScreen(),
             _titleScreen(),
             _subTitleScreen(),
-            CircularProgressIndicator(),
+            _loading(),
           ],
         ),
       ),
     );
   }
+}
+
+Widget _loading(){
+  return Lottie.asset('assets/loading/delivery.json', width: 100, height: 10, fit: BoxFit.fitWidth, animate: true);
 }
 
 Container _logoScreen() {
