@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:demo_app/FireBase/components/pages/login_page.dart';
+import 'package:demo_app/FireBase/components/pages/signin_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -17,7 +17,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     Timer(
         const Duration(seconds: 3),
         () => Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const LoginPage())));
+            MaterialPageRoute(builder: (context) => const SignInPage())));
   }
 
   @override

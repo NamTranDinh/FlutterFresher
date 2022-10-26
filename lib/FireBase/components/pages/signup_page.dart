@@ -1,9 +1,9 @@
-import 'package:demo_app/FireBase/components/views/item_form_login.dart';
-import 'package:demo_app/FireBase/components/views/item_social.dart';
 import 'package:flutter/material.dart';
+import '../views/item_form_signup.dart';
+import '../views/item_social.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +17,10 @@ class LoginPage extends StatelessWidget {
         body: Stack(
           children: [
             _componentTopLeft(),
+            _iconNavigator(context),
             _componentBottomRight(),
             _componentImage(),
-            _logoApp(),
-            const ItemFormLogin(),
+            const ItemFormRegister(),
             const ItemSocial(),
           ],
         ),
@@ -29,26 +29,37 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-Positioned _componentImage() {
+Widget _iconNavigator(BuildContext context) {
   return Positioned(
-      top: 0,
-      right: -20,
-      child: Container(
-        height: 300,
-        width: 300,
-        child: Image.asset('assets/login/festivities.png'),
+      top: 60,
+      left: 36,
+      child: GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
+          )));
+}
+
+Widget _componentImage() {
+  return Align(
+      alignment: Alignment.topCenter,
+      child: SizedBox(
+        height: 360,
+        width: 260,
+        child: Image.asset('assets/register/welcome_cats.png'),
       ));
 }
 
 Positioned _componentTopLeft() {
   return Positioned(
-    top: -200,
-    left: -100,
+    top: 0,
+    left: 0,
     child: Container(
-      width: 400,
-      height: 400,
+      width: 300,
+      height: 120,
       decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(1000)),
+          borderRadius: BorderRadius.only(bottomRight: Radius.circular(20)),
           gradient: LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -63,13 +74,13 @@ Positioned _componentTopLeft() {
 
 Positioned _componentBottomRight() {
   return Positioned(
-    bottom: -400,
-    right: -300,
+    bottom: 0,
+    right: 0,
     child: Container(
-      width: 500,
-      height: 500,
+      width: 250,
+      height: 100,
       decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(1000)),
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(1000)),
           gradient: LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -78,31 +89,6 @@ Positioned _componentBottomRight() {
               Colors.lightGreen,
             ],
           )),
-    ),
-  );
-}
-
-Positioned _logoApp() {
-  return Positioned(
-    top: 60,
-    child: Row(
-      children: [
-        Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20),
-          child: const CircleAvatar(
-            radius: 30,
-            backgroundImage: AssetImage('assets/icon/icon.png'),
-          ),
-        ),
-        const Text(
-          'Food App',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-          ),
-        ),
-      ],
     ),
   );
 }

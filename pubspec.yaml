@@ -60,6 +60,15 @@ dependencies:
   # lottie
   lottie: ^1.4.3
 
+  # firebase_auth:
+  firebase_auth: ^4.0.2
+  # firebase_core:
+  firebase_core: ^2.1.0
+  # google_sign_in:
+  google_sign_in: ^5.4.2
+  # meta:
+  meta: ^1.8.0
+
 
 
 

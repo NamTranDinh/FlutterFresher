@@ -5,6 +5,8 @@ import 'Home/HomeCategories.dart';
 import 'Home/HomeFavouritesFood.dart';
 
 class mainAppCategories extends StatefulWidget {
+  const mainAppCategories({super.key});
+
   @override
   State<mainAppCategories> createState() => _mainAppCategoriesState();
 }

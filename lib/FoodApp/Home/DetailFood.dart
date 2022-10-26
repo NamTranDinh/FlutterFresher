@@ -1,6 +1,9 @@
+import 'package:demo_app/FoodApp/Data/FakeDataCategories.dart';
+import 'package:demo_app/FoodApp/Home/EditFood.dart';
+import 'package:demo_app/FoodApp/Home/HomeCategories.dart';
+import 'package:demo_app/FoodApp/Home/HomeFood.dart';
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
-
 import '../Models/FoodsModel.dart';
 
 class DetailFood extends StatelessWidget {
@@ -16,18 +19,30 @@ class DetailFood extends StatelessWidget {
       ),
       slivers: [
         // Appbar
-        _appBarFoodDetail(context),
+        _appBarFoodDetail(context, foodsModel),
 
         // img Food
 
         // data
-        _dataDetailFood(),
+        _dataDetailFood(context),
       ],
     );
   }
 
-  SliverAppBar _appBarFoodDetail(BuildContext context) {
+  SliverAppBar _appBarFoodDetail(BuildContext context, FoodsModel model) {
     return SliverAppBar(
+        actions: [
+          InkWell(
+            onTap: () => _showMyDialog(context, model),
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 12),
+              child: const Icon(
+                Icons.delete_forever,
+                color: Colors.red,
+              ),
+            ),
+          )
+        ],
         pinned: true,
         elevation: 20,
         centerTitle: true,
@@ -57,7 +72,7 @@ class DetailFood extends StatelessWidget {
         ]));
   }
 
-  SliverToBoxAdapter _dataDetailFood() {
+  SliverToBoxAdapter _dataDetailFood(BuildContext context) {
     return SliverToBoxAdapter(
         child: Container(
       margin: const EdgeInsets.only(left: 10, right: 10, top: 10),
@@ -71,21 +86,34 @@ class DetailFood extends StatelessWidget {
           Container(
               margin: const EdgeInsets.only(top: 20, bottom: 10),
               child: Row(
-                children: const [
-                  Icon(
-                    Icons.soup_kitchen_outlined,
-                    color: Colors.green,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: const [
+                      Icon(
+                        Icons.soup_kitchen_outlined,
+                        color: Colors.green,
+                      ),
+                      Text(
+                        '\t Ingredient',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            fontFamily: 'Pacifico_Regular',
+                            color: Colors.green),
+                      ),
+                    ],
                   ),
-                  Text(
-                    '\t Ingredient',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        fontFamily: 'Pacifico_Regular',
-                        color: Colors.green),
-                  )
+                  InkWell(
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EditFood(list: FAKE_LIST_FOOD.elementAt(foodsModel.idFood-1).ingredientList),)),
+                    child: const Icon(
+                      Icons.edit,
+                      color: Colors.green,
+                    ),
+                  ),
                 ],
               )),
           _ingredients(),
@@ -94,21 +122,33 @@ class DetailFood extends StatelessWidget {
           Container(
               margin: const EdgeInsets.only(top: 20, bottom: 10),
               child: Row(
-                children: const [
-                  Icon(
-                    Icons.favorite,
-                    color: Colors.red,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: const [
+                      Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                      ),
+                      Text(
+                        '\t Formula',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            fontFamily: 'Pacifico_Regular',
+                            color: Colors.red),
+                      )
+                    ],
                   ),
-                  Text(
-                    '\t Formula',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        fontFamily: 'Pacifico_Regular',
-                        color: Colors.red),
-                  )
+                  InkWell(
+                    onTap: () => null,
+                    child: const Icon(
+                      Icons.edit,
+                      color: Colors.red,
+                    ),
+                  ),
                 ],
               )),
           _formula(),
@@ -117,21 +157,33 @@ class DetailFood extends StatelessWidget {
           Container(
               margin: const EdgeInsets.only(top: 20, bottom: 10),
               child: Row(
-                children: const [
-                  Icon(
-                    Icons.description_outlined,
-                    color: Colors.blue,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: const [
+                      Icon(
+                        Icons.description_outlined,
+                        color: Colors.blue,
+                      ),
+                      Text(
+                        '\t Description',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            fontFamily: 'Pacifico_Regular',
+                            color: Colors.blue),
+                      )
+                    ],
                   ),
-                  Text(
-                    '\t Description',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        fontFamily: 'Pacifico_Regular',
-                        color: Colors.blue),
-                  )
+                  InkWell(
+                    onTap: () => null,
+                    child: const Icon(
+                      Icons.edit,
+                      color: Colors.blue,
+                    ),
+                  ),
                 ],
               )),
           _desc(),
@@ -148,8 +200,8 @@ class DetailFood extends StatelessWidget {
         Container(
           margin: const EdgeInsets.all(4),
           decoration: BoxDecoration(
-              color: Colors.green,
-              borderRadius: BorderRadius.circular(12),
+            color: Colors.green,
+            borderRadius: BorderRadius.circular(12),
             boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.5),
@@ -200,13 +252,11 @@ class DetailFood extends StatelessWidget {
               topLeft: Radius.circular(12),
               bottomRight: Radius.circular(12),
             ),
-
             border: Border.all(
               color: Colors.blue,
               style: BorderStyle.solid,
               width: 3,
             ),
-
             boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.5),
@@ -226,8 +276,7 @@ class DetailFood extends StatelessWidget {
                     child: Icon(
                       Icons.soup_kitchen_outlined,
                       color: Colors.blue,
-                      size: 32
-                      ,
+                      size: 32,
                     )),
                 Expanded(
                     flex: 3,
@@ -357,5 +406,49 @@ class DetailFood extends StatelessWidget {
       expandText: 'Show more',
       collapseText: 'Show less',
     );
+  }
+
+  Future<void> _showMyDialog(BuildContext context, FoodsModel modelDel) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: true, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Delete'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: const <Widget>[
+                Text('Are you sure want to delete this food!'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                ),
+                onPressed: () {
+                  _deleteFoodItem(modelDel);
+                  Navigator.pop(context);
+                  Navigator.of(context).pop();
+                  Navigator.of(context).pop();
+                },
+                child: const Text('Yes')),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                ),
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text('No')),
+          ],
+        );
+      },
+    );
+  }
+
+  void _deleteFoodItem(FoodsModel modelDel) {
+    FAKE_LIST_FOOD.remove(modelDel);
+    FAKE_FAVOURITE_FOODS.map((modelFavor) {
+    });
   }
 }

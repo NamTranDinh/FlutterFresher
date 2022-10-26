@@ -1,6 +1,9 @@
+import 'package:demo_app/FireBase/repositories/user_repos.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-import '../pages/register_page.dart';
+import '../pages/signup_page.dart';
 
 class ItemFormLogin extends StatefulWidget {
   const ItemFormLogin({Key? key}) : super(key: key);
@@ -14,6 +17,7 @@ class _ItemFormLoginState extends State<ItemFormLogin> {
 
   @override
   Widget build(BuildContext context) {
+    final userRepo = UserRepos(firebaseAuth: FirebaseAuth.instance);
     return Padding(
       padding: const EdgeInsets.only(top: 80),
       child: Column(
@@ -100,7 +104,9 @@ class _ItemFormLoginState extends State<ItemFormLogin> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
                 ),
-                onPressed: () => null,
+                onPressed: () => {
+
+                },
                 child: const Text('Log in')),
           ),
 
@@ -110,7 +116,7 @@ class _ItemFormLoginState extends State<ItemFormLogin> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 InkWell(
-                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterPage(),)),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpPage(),)),
                   child: const Text('Register |', style: TextStyle(color: Colors.blue),),
                 ),
                 InkWell(
