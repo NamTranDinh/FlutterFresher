@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
-import 'CallApi/models/account_model.dart';
+import '../CallApi/models/account_model.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
