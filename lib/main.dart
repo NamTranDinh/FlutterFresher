@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'FireBase/components/pages/check_email.dart';
-
+// change name repo git
 Future<void> main() async {
   Bloc.observer = BlocObserverEvents();
   WidgetsFlutterBinding.ensureInitialized();
