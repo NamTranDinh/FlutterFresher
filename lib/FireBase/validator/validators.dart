@@ -14,7 +14,7 @@ class Validators{
   ///   $
   /// Namtran123! : true
   static isPasswordValid(String password){
-    final regularExpression  = RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
+    final regularExpression  = RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$');
     return regularExpression.hasMatch(password);
   }
 }

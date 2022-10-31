@@ -75,7 +75,7 @@ FloatingActionButton _showFloatingActionButton(BlocCrud blocCrud) {
       // blocCrud.add(OnCLickAddAccountEvent());
       /// Test api
 
-      RequestApi.postData();
+      // RequestApi.createAlbum('abccc');
 
     },
     backgroundColor: Colors.green,

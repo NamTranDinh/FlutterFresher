@@ -69,6 +69,9 @@ dependencies:
   # meta:
   meta: ^1.8.0
 
+  #open_mail_app:
+  open_mail_app: ^0.4.5
+
 
 
 
@@ -123,6 +126,7 @@ flutter:
     - assets/images/hamburger.jpg
     - assets/images/snack.jpg
     - assets/images/img_placeholder_nothing.png
+    -
     # loading path
     - assets/loading_styles/loading_holder.gif
     # logo
@@ -134,6 +138,7 @@ flutter:
     - assets/login/img_google.png
     # register
     - assets/register/welcome_cats.png
+    - assets/register/sent_email.png
     # loading
     - assets/loading/
 

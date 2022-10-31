@@ -42,8 +42,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   }
 }
 
-Widget _loading(){
-  return Lottie.asset('assets/loading/delivery.json', width: 100, height: 10, fit: BoxFit.fitWidth, animate: true);
+Widget _loading() {
+  return Lottie.asset('assets/loading/delivery.json',
+      width: 100, height: 10, fit: BoxFit.fitWidth, animate: true);
 }
 
 Container _logoScreen() {
