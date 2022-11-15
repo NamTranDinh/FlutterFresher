@@ -29,7 +29,7 @@ Future<void> main() async {
       //   primaryColor: Colors.green,
       // ),
       // title: 'This is demo Flutter',
-      home: MainDi03()
+      home: MainFireBase()
     ),
   );
 }

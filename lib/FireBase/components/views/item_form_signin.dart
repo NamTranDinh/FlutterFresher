@@ -5,6 +5,7 @@ import 'package:demo_app/FireBase/validator/validators.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import '../../../FoodApp/mainApp.dart';
 import '../pages/signup_page.dart';
 
 class ItemFormLogin extends StatefulWidget {
@@ -151,7 +152,7 @@ class _ItemFormLoginState extends State<ItemFormLogin> {
                       if (errorMsg != '') {
                         _showMyDialogError(errorMsg);
                       } else {
-                        Navigator.push(this.context, MaterialPageRoute(builder: (context) => const HomePage(),));
+                        Navigator.push(this.context, MaterialPageRoute(builder: (context) => const mainAppCategories(),));
                       }
                     }
                   },

@@ -2,6 +2,7 @@ import 'package:demo_app/FoodApp/Data/FakeDataCategories.dart';
 import 'package:demo_app/FoodApp/Home/EditFood.dart';
 import 'package:demo_app/FoodApp/Home/HomeCategories.dart';
 import 'package:demo_app/FoodApp/Home/HomeFood.dart';
+import 'package:demo_app/FoodApp/Models/CategoriesModel.dart';
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
 import '../Models/FoodsModel.dart';
@@ -9,7 +10,7 @@ import '../Models/FoodsModel.dart';
 class DetailFood extends StatelessWidget {
   late FoodsModel foodsModel;
 
-  DetailFood({required this.foodsModel});
+  DetailFood({super.key, required this.foodsModel});
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +109,16 @@ class DetailFood extends StatelessWidget {
                     ],
                   ),
                   InkWell(
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EditFood(list: FAKE_LIST_FOOD.elementAt(foodsModel.idFood-1).ingredientList),)),
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => EditFood(
+                            list: FAKE_LIST_FOOD
+                                .elementAt(foodsModel.idFood - 1)
+                                .ingredientList,
+                            model: foodsModel,
+                          ),
+                        )),
                     child: const Icon(
                       Icons.edit,
                       color: Colors.green,
@@ -429,9 +439,12 @@ class DetailFood extends StatelessWidget {
                 ),
                 onPressed: () {
                   _deleteFoodItem(modelDel);
-                  Navigator.pop(context);
-                  Navigator.of(context).pop();
-                  Navigator.of(context).pop();
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomeFood(
+                            categoriesModel: _getCurrentCate(foodsModel)),
+                      ));
                 },
                 child: const Text('Yes')),
             ElevatedButton(
@@ -448,7 +461,16 @@ class DetailFood extends StatelessWidget {
 
   void _deleteFoodItem(FoodsModel modelDel) {
     FAKE_LIST_FOOD.remove(modelDel);
-    FAKE_FAVOURITE_FOODS.map((modelFavor) {
-    });
+    FAKE_FAVOURITE_FOODS.map((modelFavor) {});
+  }
+
+  CategoriesModel _getCurrentCate(FoodsModel model) {
+    late CategoriesModel a;
+    for (CategoriesModel e in FAKE_DATA_CATEGORIES) {
+      if (e.id == model.idCategory) {
+        a = e;
+      }
+    }
+    return a;
   }
 }

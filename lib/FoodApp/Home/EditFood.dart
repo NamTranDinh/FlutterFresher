@@ -1,10 +1,13 @@
 import 'package:demo_app/FoodApp/Data/FakeDataCategories.dart';
+import 'package:demo_app/FoodApp/Home/DetailFood.dart';
+import 'package:demo_app/FoodApp/Models/FoodsModel.dart';
 import 'package:flutter/material.dart';
 
 class EditFood extends StatefulWidget {
   final List<String> list;
+  final FoodsModel model;
 
-  const EditFood({super.key, required this.list});
+  const EditFood({super.key, required this.list, required this.model});
 
   @override
   State<EditFood> createState() => _EditFoodState();
@@ -12,11 +15,19 @@ class EditFood extends StatefulWidget {
 
 class _EditFoodState extends State<EditFood> {
   String txt = '';
+  String s = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('EditFood'),
+        leading: IconButton(
+          onPressed: () =>
+              Navigator.pop(
+                  context, MaterialPageRoute(builder: (context) => DetailFood(foodsModel: widget.model),)),
+          icon: const Icon(Icons.arrow_back),
+        ),
         actions: [
           IconButton(
             onPressed: () {
@@ -28,9 +39,9 @@ class _EditFoodState extends State<EditFood> {
       ),
       body: Center(
           child: ListView.builder(
-        itemCount: widget.list.length,
-        itemBuilder: (context, index) => _item(widget.list[index], index),
-      )),
+            itemCount: widget.list.length,
+            itemBuilder: (context, index) => _item(widget.list[index], index),
+          )),
     );
   }
 
@@ -78,8 +89,14 @@ class _EditFoodState extends State<EditFood> {
           title: const Text('Add'),
           content: SingleChildScrollView(
             child: ListBody(
-              children: const <Widget>[
-                TextField(),
+              children: [
+                TextField(
+                  onChanged: (value) {
+                    setState(() {
+                      s = value;
+                    });
+                  },
+                ),
               ],
             ),
           ),
@@ -89,7 +106,10 @@ class _EditFoodState extends State<EditFood> {
                   backgroundColor: Colors.green,
                 ),
                 onPressed: () {
-
+                  setState(() {
+                    addNewValue(s);
+                    Navigator.pop(context);
+                  });
                 },
                 child: const Text('Add')),
             ElevatedButton(
@@ -148,8 +168,12 @@ class _EditFoodState extends State<EditFood> {
       },
     );
   }
-  
-  void setValue(int index ,String newString){
+
+  void setValue(int index, String newString) {
     widget.list[index] = newString;
+  }
+
+  void addNewValue(String newValue) {
+    widget.list.add(newValue);
   }
 }

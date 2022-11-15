@@ -186,8 +186,7 @@ class _ItemFormRegisterState extends State<ItemFormRegister> {
                       } on FirebaseAuthException catch (e) {
                         e.message;
                         if (e.code == 'email-already-in-use') {
-                          errorMsg =
-                              'The account already exists for that email.';
+                          errorMsg = 'The account already exists for that email.';
                         }
                       }
                       if (errorMsg != '') {

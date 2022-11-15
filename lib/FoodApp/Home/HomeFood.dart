@@ -7,7 +7,6 @@ import '../Models/FoodsModel.dart';
 
 class HomeFood extends StatelessWidget {
   final CategoriesModel categoriesModel;
-
   HomeFood({required this.categoriesModel});
 
   @override
