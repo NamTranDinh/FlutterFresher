@@ -21,7 +21,7 @@ class SignInPage extends StatelessWidget {
             _componentImage(),
             _logoApp(),
             const ItemFormLogin(),
-            const ItemSocial(),
+            // const ItemSocial(),
           ],
         ),
       ),

@@ -21,7 +21,7 @@ class SignUpPage extends StatelessWidget {
             _componentBottomRight(),
             _componentImage(),
             const ItemFormRegister(),
-            const ItemSocial(),
+            // const ItemSocial(),
           ],
         ),
       ),
