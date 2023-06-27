@@ -1,8 +1,8 @@
-import 'package:demo_app/FoodApp/Data/FakeDataCategories.dart';
-import 'package:demo_app/FoodApp/Home/EditFood.dart';
-import 'package:demo_app/FoodApp/Home/HomeCategories.dart';
-import 'package:demo_app/FoodApp/Home/HomeFood.dart';
-import 'package:demo_app/FoodApp/Models/CategoriesModel.dart';
+import 'package:demo_app/food_app/Data/FakeDataCategories.dart';
+import 'package:demo_app/food_app/Home/EditFood.dart';
+import 'package:demo_app/food_app/Home/HomeCategories.dart';
+import 'package:demo_app/food_app/Home/HomeFood.dart';
+import 'package:demo_app/food_app/Models/CategoriesModel.dart';
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
 import '../Models/FoodsModel.dart';

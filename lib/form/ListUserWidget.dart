@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'UserModel.dart';
 
@@ -15,7 +13,9 @@ class ListUserWidget extends StatelessWidget {
           return Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            color: (index % 2 == 0) ? Colors.green[300] : Theme.of(context).primaryColor,
+            color: (index % 2 == 0)
+                ? Colors.green[300]
+                : Theme.of(context).primaryColor,
             elevation: 10,
             child: ListTile(
               leading: const Icon(Icons.ac_unit, color: Colors.white),
@@ -37,8 +37,6 @@ class ListUserWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-        height:600,
-        child: _listWidgetUser());
+    return SizedBox(height: 600, child: _listWidgetUser());
   }
 }

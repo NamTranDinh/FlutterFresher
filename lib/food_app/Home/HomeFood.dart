@@ -1,6 +1,6 @@
-import 'package:demo_app/FoodApp/Data/FakeDataCategories.dart';
+import 'package:demo_app/food_app/Data/FakeDataCategories.dart';
 import 'package:flutter/material.dart';
-import 'package:demo_app/FoodApp/Models/CategoriesModel.dart';
+import 'package:demo_app/food_app/Models/CategoriesModel.dart';
 
 import '../LayoutItem/ItemFoods.dart';
 import '../Models/FoodsModel.dart';

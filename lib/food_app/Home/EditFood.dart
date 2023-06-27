@@ -1,6 +1,6 @@
-import 'package:demo_app/FoodApp/Data/FakeDataCategories.dart';
-import 'package:demo_app/FoodApp/Home/DetailFood.dart';
-import 'package:demo_app/FoodApp/Models/FoodsModel.dart';
+import 'package:demo_app/food_app/Data/FakeDataCategories.dart';
+import 'package:demo_app/food_app/Home/DetailFood.dart';
+import 'package:demo_app/food_app/Models/FoodsModel.dart';
 import 'package:flutter/material.dart';
 
 class EditFood extends StatefulWidget {

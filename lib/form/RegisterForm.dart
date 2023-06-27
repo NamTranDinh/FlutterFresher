@@ -1,10 +1,11 @@
-import 'package:demo_app/Form/ListUserWidget.dart';
+import 'package:demo_app/form/ListUserWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'UserModel.dart';
 import 'package:toast/toast.dart';
 
 class RegisterForm extends StatefulWidget {
+  const RegisterForm({super.key});
+
   @override
   State<RegisterForm> createState() => _RegisterFormState();
 }

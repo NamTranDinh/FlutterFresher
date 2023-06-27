@@ -1,5 +1,5 @@
-import 'package:demo_app/FoodApp/Data/FakeDataCategories.dart';
-import 'package:demo_app/FoodApp/LayoutItem/ItemCategories.dart';
+import 'package:demo_app/food_app/Data/FakeDataCategories.dart';
+import 'package:demo_app/food_app/LayoutItem/ItemCategories.dart';
 import 'package:flutter/material.dart';
 
 class HomeCategories extends StatelessWidget {

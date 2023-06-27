@@ -1,5 +1,5 @@
-import 'package:demo_app/FoodApp/Models/CategoriesModel.dart';
-import 'package:demo_app/FoodApp/Models/FavouritesFoodModel.dart';
+import 'package:demo_app/food_app/Models/CategoriesModel.dart';
+import 'package:demo_app/food_app/Models/FavouritesFoodModel.dart';
 import 'package:flutter/material.dart';
 
 import '../Models/FoodsModel.dart';
