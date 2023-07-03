@@ -44,6 +44,8 @@ android {
         targetSdkVersion 33
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        buildConfigField 'String', 'FLAVOR_CONFIGURATION', '"${System.getenv("FLAVOR") ?: "default"}"'
+
     }
 
     buildTypes {
@@ -53,6 +55,20 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    flavorDimensions "FLAVOR"
+
+    productFlavors {
+        dev {
+            dimension "FLAVOR"
+            resValue "string", "app_name", "[DEV] app name"     // config app name base on flavor type
+        }
+        prod {
+            dimension "FLAVOR"
+            resValue "string", "app_name", "[PROD] app name"    // config app name base on flavor type
+        }
+    }
+
 }
 
 flutter {

@@ -4,6 +4,7 @@ import 'package:demo_app/FireBase/main_firebase.dart';
 import 'package:demo_app/Provider/counter_main.dart';
 import 'package:demo_app/dependence_injection/1_using_contructor/main_di_01.dart';
 import 'package:demo_app/dependence_injection/2_using_inherit_widget/main_di_02.dart';
+import 'package:demo_app/flavor_config/main_flavor.dart';
 import 'package:demo_app/get/main_get.dart';
 import 'package:demo_app/get/routes_manager/routes.dart';
 import 'package:demo_app/get/routes_manager/routes_impl.dart';
@@ -20,12 +21,14 @@ import 'dependence_injection/3_using_getIt/main_di_03.dart';
 // change name repo git
 import 'dependence_injection/3_using_getIt/injection_appInfo.dart' as di;
 
-Future<void> main() async {
+void main() {
   Bloc.observer = BlocObserverEvents();
   WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
+  const String flavor = String.fromEnvironment('FLAVOR_CONFIGURATION');
+  final config = getConfigForFlavor(flavor);
+  runApp(MaterialApp(home: MainFlavor(config)));
 
+  // await Firebase.initializeApp();
   // di.setupProj();
   // Get.put<Routes>(RoutesImpl(), permanent: true);
-  runApp(const MaterialApp(home: MainIsolate()));
 }
